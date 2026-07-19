@@ -56,6 +56,7 @@ fn frame(mut app App) {
                 app.curr_w = w
                 app.curr_h = h
                 app.raw_pixels = []u32{len: w * h}
+                app.gg.remove_cached_image_by_idx(app.img_idx)
                 app.img_idx = app.gg.new_streaming_image(w, h, 4, gg.StreamingImageConfig{
                         pixel_format: .rgba8
                         mag_filter: .linear
